@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Resume Result - Resume Classification{% endblock %}
+
+{% block content %}
+<main>
+    <h2>Resume Classification Result</h2>
+    <p>Uploaded Resume: <a href="{{ uploaded_resume_url }}">{{ uploaded_resume_url }}</a></p>
+    <p>Predicted Category: {{ predicted_category }}</p>
+</main>
+{% endblock %}

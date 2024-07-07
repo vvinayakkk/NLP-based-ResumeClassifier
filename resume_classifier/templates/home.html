@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Resume Classification{% endblock %}
+
+{% block content %}
+<main>
+    <h2>Welcome to Resume Classification</h2>
+    <p>Upload your resume to predict the category.</p>
+    <form action="{% url 'upload_resume' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="resume_file" accept=".pdf,.doc,.docx,.txt" required>
+        <button type="submit">Upload Resume</button>
+    </form>
+    <div class="info-box">
+        <h3>How It Works</h3>
+        <p>Our machine learning model analyzes your resume and predicts the most suitable job category based on its content.</p>
+        <p>We prioritize your privacy. Your resume data is securely processed and not stored after classification.</p>
+    </div>
+</main>
+{% endblock %}
